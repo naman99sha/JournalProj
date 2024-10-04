@@ -14,23 +14,27 @@ public class UserService {
     @Autowired
     private UserRepo userRepo;
 
-    public void saveEntry(User user){
+    public void saveEntry(User user) {
         userRepo.save(user);
     }
 
-    public List<User> getAll(){
+    public List<User> getAll() {
         return userRepo.findAll();
     }
 
-    public Optional<User> findById(ObjectId id){
+    public Optional<User> findById(ObjectId id) {
         return userRepo.findById(id);
     }
 
-    public void deleteAll(){
+    public void deleteAll() {
         userRepo.deleteAll();
     }
 
-    public void deleteById(ObjectId id){
+    public void deleteById(ObjectId id) {
         userRepo.deleteById(id);
+    }
+
+    public User findByUserName(String userName){
+        return userRepo.findByUserName(userName);
     }
 }
